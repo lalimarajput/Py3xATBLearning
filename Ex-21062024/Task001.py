@@ -1,0 +1,1 @@
+#Right triangle star pattern
