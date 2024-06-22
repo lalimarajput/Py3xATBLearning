@@ -1,4 +1,4 @@
-#Palidrome of string:-
+#Palidrome of string:- # Taking same number of characters as True otherwise False
 def is_palindrome(s):
     # Removing any spaces and converting the string to lowercase for accurate comparison
     s = s.replace(" ", "").lower()

@@ -1,4 +1,5 @@
-#Anagram of string:- Taking same number of characters as True otherwise False
+#Anagram of string:-
+# An anagram is a word or phrase formed by rearranging the letters of a different word or phrase
 
 
 def are_anagrams(s1, s2):
@@ -21,4 +22,10 @@ print(f"Are '{s1}' and '{s2}' anagrams? {are_anagrams(s1, s2)}")  # Output: Are 
 
 s3 = "hello"
 s4 = "world"
-print(f"Are '{s3}' and '{s4}' anagrams? {are_anagrams(s3, s4)}")  # Output: Are 'hello' and 'world' anagrams? False
+print(f"Are '{s3}' and '{s4}' anagrams? {are_anagrams(s3, s4)}")
+# Output: Are 'hello' and 'world' anagrams? False
+# because no phrase is formed by rearranging the words
+
+s1 = "namo"
+s2 = "onam"
+print(f"Are '{s1}' and '{s2}' anagrams? {are_anagrams(s1, s2)}")  # Output: Are 'namo' and 'onam' anagrams? True
