@@ -8,4 +8,4 @@ def sum_of_digits(n):
         n= n//10   #gives quotient
     return sum
 
-print(sum_of_digits(12345))
+print(sum_of_digits(12345))   #gives 15
