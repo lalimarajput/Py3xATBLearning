@@ -9,3 +9,4 @@ def sum_of_digits(n):
     return sum
 
 print(sum_of_digits(12345))   #gives 15
+
