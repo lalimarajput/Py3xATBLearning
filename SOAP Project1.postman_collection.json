@@ -1,0 +1,762 @@
+{
+	"info": {
+		"_postman_id": "fa98fe92-8a41-4918-8105-10ed6bac3f14",
+		"name": "SOAP Project1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20791109",
+		"_collection_link": "https://www.postman.com/gold-water-91322/workspace/py3xatb/collection/20791109-fa98fe92-8a41-4918-8105-10ed6bac3f14?action=share&source=collection_link&creator=20791109"
+	},
+	"item": [
+		{
+			"name": "TC1-Positive",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/soap+xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap12:Envelope xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\r\n  <soap12:Body>\r\n    <NumberToWords xmlns=\"http://www.dataaccess.com/webservicesserver/\">\r\n      <ubiNum>503</ubiNum>\r\n    </NumberToWords>\r\n  </soap12:Body>\r\n</soap12:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.dataaccess.com/webservicesserver/NumberConversion.wso",
+					"protocol": "https",
+					"host": [
+						"www",
+						"dataaccess",
+						"com"
+					],
+					"path": [
+						"webservicesserver",
+						"NumberConversion.wso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC2-Negative TC with invalid number",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/soap+xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap12:Envelope xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\r\n  <soap12:Body>\r\n    <NumberToWords xmlns=\"http://www.dataaccess.com/webservicesserver/\">\r\n      <ubiNum>-1</ubiNum>\r\n    </NumberToWords>\r\n  </soap12:Body>\r\n</soap12:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.dataaccess.com/webservicesserver/NumberConversion.wso",
+					"protocol": "https",
+					"host": [
+						"www",
+						"dataaccess",
+						"com"
+					],
+					"path": [
+						"webservicesserver",
+						"NumberConversion.wso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC3-Negative TC with special character",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/soap+xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap12:Envelope xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\r\n  <soap12:Body>\r\n    <NumberToWords xmlns=\"http://www.dataaccess.com/webservicesserver/\">\r\n      <ubiNum>$</ubiNum>\r\n    </NumberToWords>\r\n  </soap12:Body>\r\n</soap12:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.dataaccess.com/webservicesserver/NumberConversion.wso",
+					"protocol": "https",
+					"host": [
+						"www",
+						"dataaccess",
+						"com"
+					],
+					"path": [
+						"webservicesserver",
+						"NumberConversion.wso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC4-Negative TC with decimal number",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/soap+xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap12:Envelope xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\r\n  <soap12:Body>\r\n    <NumberToWords xmlns=\"http://www.dataaccess.com/webservicesserver/\">\r\n      <ubiNum>12.34</ubiNum>\r\n    </NumberToWords>\r\n  </soap12:Body>\r\n</soap12:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.dataaccess.com/webservicesserver/NumberConversion.wso",
+					"protocol": "https",
+					"host": [
+						"www",
+						"dataaccess",
+						"com"
+					],
+					"path": [
+						"webservicesserver",
+						"NumberConversion.wso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC5-Negative TC with Chinese language",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/soap+xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap12:Envelope xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\r\n  <soap12:Body>\r\n    <NumberToWords xmlns=\"http://www.dataaccess.com/webservicesserver/\">\r\n      <ubiNum>𡨸漢</ubiNum>\r\n    </NumberToWords>\r\n  </soap12:Body>\r\n</soap12:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.dataaccess.com/webservicesserver/NumberConversion.wso",
+					"protocol": "https",
+					"host": [
+						"www",
+						"dataaccess",
+						"com"
+					],
+					"path": [
+						"webservicesserver",
+						"NumberConversion.wso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC6-Negative TC with arabic language",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/soap+xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap12:Envelope xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\r\n  <soap12:Body>\r\n    <NumberToWords xmlns=\"http://www.dataaccess.com/webservicesserver/\">\r\n      <ubiNum>وتتحمّل والكوري ف\r\n</ubiNum>\r\n    </NumberToWords>\r\n  </soap12:Body>\r\n</soap12:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.dataaccess.com/webservicesserver/NumberConversion.wso",
+					"protocol": "https",
+					"host": [
+						"www",
+						"dataaccess",
+						"com"
+					],
+					"path": [
+						"webservicesserver",
+						"NumberConversion.wso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC7-Negative TC with lower case alphabet",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/soap+xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap12:Envelope xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\r\n  <soap12:Body>\r\n    <NumberToWords xmlns=\"http://www.dataaccess.com/webservicesserver/\">\r\n      <ubiNum>lalima\r\n</ubiNum>\r\n    </NumberToWords>\r\n  </soap12:Body>\r\n</soap12:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.dataaccess.com/webservicesserver/NumberConversion.wso",
+					"protocol": "https",
+					"host": [
+						"www",
+						"dataaccess",
+						"com"
+					],
+					"path": [
+						"webservicesserver",
+						"NumberConversion.wso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC8-Negative TC with upper case alphabet",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/soap+xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap12:Envelope xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\r\n  <soap12:Body>\r\n    <NumberToWords xmlns=\"http://www.dataaccess.com/webservicesserver/\">\r\n      <ubiNum>LALIMA\r\n</ubiNum>\r\n    </NumberToWords>\r\n  </soap12:Body>\r\n</soap12:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.dataaccess.com/webservicesserver/NumberConversion.wso",
+					"protocol": "https",
+					"host": [
+						"www",
+						"dataaccess",
+						"com"
+					],
+					"path": [
+						"webservicesserver",
+						"NumberConversion.wso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC9-Negative TC with Hexadecimal number",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/soap+xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap12:Envelope xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\r\n  <soap12:Body>\r\n    <NumberToWords xmlns=\"http://www.dataaccess.com/webservicesserver/\">\r\n      <ubiNum>0x0876567\r\n\r\n</ubiNum>\r\n    </NumberToWords>\r\n  </soap12:Body>\r\n</soap12:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.dataaccess.com/webservicesserver/NumberConversion.wso",
+					"protocol": "https",
+					"host": [
+						"www",
+						"dataaccess",
+						"com"
+					],
+					"path": [
+						"webservicesserver",
+						"NumberConversion.wso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC10-Negative TC with Long String/number",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/soap+xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap12:Envelope xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\r\n  <soap12:Body>\r\n    <NumberToWords xmlns=\"http://www.dataaccess.com/webservicesserver/\">\r\n      <ubiNum>877654475585596825175264264646464646565675\r\n\r\n</ubiNum>\r\n    </NumberToWords>\r\n  </soap12:Body>\r\n</soap12:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.dataaccess.com/webservicesserver/NumberConversion.wso",
+					"protocol": "https",
+					"host": [
+						"www",
+						"dataaccess",
+						"com"
+					],
+					"path": [
+						"webservicesserver",
+						"NumberConversion.wso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC11-Negative TC with Null value",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/soap+xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap12:Envelope xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\r\n  <soap12:Body>\r\n    <NumberToWords xmlns=\"http://www.dataaccess.com/webservicesserver/\">\r\n      <ubiNum>Null\r\n\r\n</ubiNum>\r\n    </NumberToWords>\r\n  </soap12:Body>\r\n</soap12:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.dataaccess.com/webservicesserver/NumberConversion.wso",
+					"protocol": "https",
+					"host": [
+						"www",
+						"dataaccess",
+						"com"
+					],
+					"path": [
+						"webservicesserver",
+						"NumberConversion.wso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC12-Negative TC with blank/no request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/soap+xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap12:Envelope xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\r\n  <soap12:Body>\r\n    <NumberToWords xmlns=\"http://www.dataaccess.com/webservicesserver/\">\r\n      <ubiNum></ubiNum>\r\n    </NumberToWords>\r\n  </soap12:Body>\r\n</soap12:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.dataaccess.com/webservicesserver/NumberConversion.wso",
+					"protocol": "https",
+					"host": [
+						"www",
+						"dataaccess",
+						"com"
+					],
+					"path": [
+						"webservicesserver",
+						"NumberConversion.wso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC13-Negative TC with zero/0",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/soap+xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap12:Envelope xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\r\n  <soap12:Body>\r\n    <NumberToWords xmlns=\"http://www.dataaccess.com/webservicesserver/\">\r\n      <ubiNum>0</ubiNum>\r\n    </NumberToWords>\r\n  </soap12:Body>\r\n</soap12:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.dataaccess.com/webservicesserver/NumberConversion.wso",
+					"protocol": "https",
+					"host": [
+						"www",
+						"dataaccess",
+						"com"
+					],
+					"path": [
+						"webservicesserver",
+						"NumberConversion.wso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC14-Negative TC with alphanumeric",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/soap+xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap12:Envelope xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\r\n  <soap12:Body>\r\n    <NumberToWords xmlns=\"http://www.dataaccess.com/webservicesserver/\">\r\n      <ubiNum>Lalima123</ubiNum>\r\n    </NumberToWords>\r\n  </soap12:Body>\r\n</soap12:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.dataaccess.com/webservicesserver/NumberConversion.wso",
+					"protocol": "https",
+					"host": [
+						"www",
+						"dataaccess",
+						"com"
+					],
+					"path": [
+						"webservicesserver",
+						"NumberConversion.wso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC15-Negative TC with No Header",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 415\", function () {\r",
+							"    pm.response.to.have.status(415);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/soap+xml",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soap12:Envelope xmlns:soap12=\"http://www.w3.org/2003/05/soap-envelope\">\r\n  <soap12:Body>\r\n    <NumberToWords xmlns=\"http://www.dataaccess.com/webservicesserver/\">\r\n      <ubiNum>223</ubiNum>\r\n    </NumberToWords>\r\n  </soap12:Body>\r\n</soap12:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.dataaccess.com/webservicesserver/NumberConversion.wso",
+					"protocol": "https",
+					"host": [
+						"www",
+						"dataaccess",
+						"com"
+					],
+					"path": [
+						"webservicesserver",
+						"NumberConversion.wso"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
