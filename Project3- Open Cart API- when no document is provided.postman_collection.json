@@ -1,0 +1,258 @@
+{
+	"info": {
+		"_postman_id": "894b31e2-6526-459d-bb51-76ecf57ceb9c",
+		"name": "Project3- Open Cart API- when no document is provided",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20791109",
+		"_collection_link": "https://gold-water-91322.postman.co/workspace/PY3XATB~b9509092-d672-4bb8-b92c-7d6f4097fba4/collection/20791109-894b31e2-6526-459d-bb51-76ecf57ceb9c?action=share&source=collection_link&creator=20791109"
+	},
+	"item": [
+		{
+			"name": "Account Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8"
+					},
+					{
+						"key": "cache-control",
+						"value": "max-age=0"
+					},
+					{
+						"key": "cookie",
+						"value": "OCSESSID=66b57bf0ce95f085b9fb3b0592; language=en-gb; currency=USD"
+					},
+					{
+						"key": "origin",
+						"value": "https://awesomeqa.com"
+					},
+					{
+						"key": "priority",
+						"value": "u=0, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://awesomeqa.com/ui/index.php?route=account/register"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not/A)Brand\";v=\"8\", \"Chromium\";v=\"126\", \"Google Chrome\";v=\"126\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "document"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "navigate"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "sec-fetch-user",
+						"value": "?1"
+					},
+					{
+						"key": "upgrade-insecure-requests",
+						"value": "1"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "customer_group_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "firstname",
+							"value": "Emma",
+							"type": "text"
+						},
+						{
+							"key": "lastname",
+							"value": "Pittman",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "nebega@mailinator.com",
+							"type": "text"
+						},
+						{
+							"key": "telephone",
+							"value": "+1 (481) 538-8007",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Pa$$0rd!",
+							"type": "text"
+						},
+						{
+							"key": "confirm",
+							"value": "Pa$$0rd!",
+							"type": "text"
+						},
+						{
+							"key": "newsletter",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "agree",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://awesomeqa.com/ui/index.php?route=account/register",
+					"protocol": "https",
+					"host": [
+						"awesomeqa",
+						"com"
+					],
+					"path": [
+						"ui",
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "account/register"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8"
+					},
+					{
+						"key": "cache-control",
+						"value": "max-age=0"
+					},
+					{
+						"key": "cookie",
+						"value": "OCSESSID=66b57bf0ce95f085b9fb3b0592; language=en-gb; currency=USD"
+					},
+					{
+						"key": "origin",
+						"value": "https://awesomeqa.com"
+					},
+					{
+						"key": "priority",
+						"value": "u=0, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://awesomeqa.com/ui/index.php?route=account/login"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not/A)Brand\";v=\"8\", \"Chromium\";v=\"126\", \"Google Chrome\";v=\"126\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "document"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "navigate"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "sec-fetch-user",
+						"value": "?1"
+					},
+					{
+						"key": "upgrade-insecure-requests",
+						"value": "1"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "cucip@mailinator.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Pa$$0rd!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://awesomeqa.com/ui/index.php?route=account/login",
+					"protocol": "https",
+					"host": [
+						"awesomeqa",
+						"com"
+					],
+					"path": [
+						"ui",
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "account/login"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
